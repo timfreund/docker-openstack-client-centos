@@ -40,7 +40,8 @@ def write_release_directory(release_name, rpm_url):
         os.mkdir(release_name)
     with open('Dockerfile.template', 'r') as template_file:
         template = Template(template_file.read())
-        rendered = template.render(rpm_url=rpm_url)
+        rendered = template.render(release_name=release_name,
+                                   rpm_url=rpm_url)
         
         with open("%s/Dockerfile" % release_name, 'w') as docker_file:
             docker_file.write(rendered)
