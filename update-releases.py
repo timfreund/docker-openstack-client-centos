@@ -5,7 +5,7 @@ import os
 from jinja2 import Template
 from urllib.request import urlopen
 
-base_url = 'http://newton.vpn.freunds.net:8000/repos/openstack/'
+base_url = 'https://repos.fedorapeople.org/repos/openstack/'
 
 def get_releases(base_url = base_url):
     releases = []
